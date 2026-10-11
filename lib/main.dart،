@@ -1,0 +1,73 @@
+import 'package:flutter/material.dart';
+import 'package:fl_chart/fl_chart.dart';
+
+void main() {
+  runApp(const InstagramInsightsApp());
+}
+
+class InstagramInsightsApp extends StatelessWidget {
+  const InstagramInsightsApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Instagram Insights Simulator',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        scaffoldBackgroundColor: const Color(0xFF000000),
+        primaryColor: const Color(0xFF0095F6),
+        colorScheme: const ColorScheme.dark(
+          surface: Color(0xFF121212),
+          primary: Color(0xFF0095F6),
+        ),
+        fontFamily: 'Roboto',
+      ),
+      home: const DashboardScreen(),
+    );
+  }
+}
+
+class ReelInsightsData {
+  String reelUrl;
+  String thumbnailPath;
+  String caption;
+  int views;
+  int likes;
+  int comments;
+  int shares;
+  int saves;
+  double avgWatchTimeSeconds;
+  double videoDurationSeconds;
+  double followerPercentage;
+  double nonFollowerPercentage;
+  Map<String, double> countryPercentages;
+  Map<String, double> ageGroupPercentages;
+  Map<String, double> genderPercentages;
+  List<FlSpot> retentionSpots;
+
+  ReelInsightsData({
+    required this.reelUrl,
+    required this.thumbnailPath,
+    required this.caption,
+    required this.views,
+    required this.likes,
+    required this.comments,
+    required this.shares,
+    required this.saves,
+    required this.avgWatchTimeSeconds,
+    required this.videoDurationSeconds,
+    required this.followerPercentage,
+    required this.nonFollowerPercentage,
+    required this.countryPercentages,
+    required this.ageGroupPercentages,
+    required this.genderPercentages,
+    required this.retentionSpots,
+  });
+}
+
+class DashboardScreen extends StatefulWidget {
+  const DashboardScreen({Key? key}) : super(key: key);
+
+  @override
+  State<DashboardScreen> createState() => _
